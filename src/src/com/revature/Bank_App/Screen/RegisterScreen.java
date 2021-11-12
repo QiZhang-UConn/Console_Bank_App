@@ -42,7 +42,6 @@ public class RegisterScreen extends Screen{
         System.out.printf("Provided user first and last name: { \"firstName\": %s, \"lastName\": %s}\n", firstName, lastName);
 
         AppUser newUser = new AppUser(firstName, lastName, email, username, password);
-        newUser.setId("11111");
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 

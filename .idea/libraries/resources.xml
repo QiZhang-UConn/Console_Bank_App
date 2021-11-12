@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="resources">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/resources/postgresql-42.2.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/resources/hamcrest-core-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/resources/junit-4.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
