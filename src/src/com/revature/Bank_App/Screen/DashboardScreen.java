@@ -7,8 +7,8 @@ import java.io.BufferedReader;
 public class DashboardScreen extends Screen{
 
     //DashboardScreen Constructor
-    public DashboardScreen(String screenName, String routingString, BufferedReader consoleReader, ScreenRouter screenRouter) {
-        super(screenName, routingString, consoleReader, screenRouter);
+    public DashboardScreen(BufferedReader consoleReader, ScreenRouter screenRouter) {
+        super("Dashboard Screen","dashboard", consoleReader, screenRouter);
     }
 
     @Override

@@ -13,8 +13,8 @@ import java.util.UUID;
 public class RegisterScreen extends Screen{
 
     //RegisterScreen constructor
-    public RegisterScreen(String screenName, String routingString, BufferedReader consoleReader, ScreenRouter screenRouter) {
-        super(screenName, routingString, consoleReader, screenRouter);
+    public RegisterScreen(BufferedReader consoleReader, ScreenRouter screenRouter) {
+        super("Register Screen","register", consoleReader, screenRouter);
     }
 
     @Override

@@ -7,8 +7,8 @@ import static com.revature.Bank_App.util.AppState.AppStopping;
 public class WelcomeScreen extends Screen{
 
     //WelcomeScreen Constructor
-    public WelcomeScreen(String screenName, String routingString, BufferedReader consoleReader, ScreenRouter screenRouter) {
-        super(screenName, routingString, consoleReader, screenRouter);
+    public WelcomeScreen(BufferedReader consoleReader, ScreenRouter screenRouter) {
+        super("Welcome Screen","welcome", consoleReader, screenRouter);
     }
 
     /*

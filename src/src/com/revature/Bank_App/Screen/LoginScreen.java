@@ -6,8 +6,8 @@ import java.io.BufferedReader;
 public class LoginScreen extends Screen{
 
     //LoginScreen constructor
-    public LoginScreen(String screenName, String routingString, BufferedReader consoleReader, ScreenRouter screenRouter) {
-        super(screenName, routingString, consoleReader, screenRouter);
+    public LoginScreen(BufferedReader consoleReader, ScreenRouter screenRouter) {
+        super("Register Screen","register", consoleReader, screenRouter);
     }
 
     @Override
