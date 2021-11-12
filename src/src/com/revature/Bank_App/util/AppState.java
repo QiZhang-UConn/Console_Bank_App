@@ -34,8 +34,11 @@ public class AppState {
 
     //Constructor of AppState
     public AppState(){
+        //input reader pass down to every screen for convenience
         BufferedReader consoleReader=new BufferedReader(new InputStreamReader(System.in));
-        AppRunning();//Once AppState is instantiated, means someone is using the app
+        //Once AppState is instantiated, means someone is using the app
+        AppRunning();
+        //initiating AppState must be before login, only Welcome, login, register can be accessed, maybe dashboard
         availableScreens=new ScreenRouter();
         availableScreens.addScreen(
                 new WelcomeScreen("Welcome Screen","welcome",consoleReader,availableScreens));
@@ -47,14 +50,14 @@ public class AppState {
                 new DashboardScreen("Dashboard Screen","dashboard",consoleReader,availableScreens));
     }
 
+
     public void initialState(){
-        while(isRunning) {
-            try {
-                availableScreens.navigate("welcome");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            while(isRunning) availableScreens.navigate("welcome");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
     }
 
 }

@@ -22,6 +22,7 @@ public class ScreenRouter {
                 currentScreen.render();
             }
         }
+
     }
 
 }

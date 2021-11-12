@@ -19,7 +19,8 @@ public class WelcomeScreen extends Screen{
         System.out.println("Welcome to the Bank App! Please make selections\n"+
                 "1) Login\n"+
                 "2) Register\n"+
-                "3) Exits\n");
+                "3) Exits\n"+
+                "> ");
         String userDecision=consoleReader.readLine();
 
         switch (userDecision){
@@ -27,9 +28,10 @@ public class WelcomeScreen extends Screen{
                 screenRouter.navigate("login");
                 break;
             case "2":
-                screenRouter.navigate("egister");
+                screenRouter.navigate("register");
                 break;
             case "3":
+                System.out.println("Bye~");
                 AppStopping();
             case "throw exception":
                 throw new RuntimeException();
