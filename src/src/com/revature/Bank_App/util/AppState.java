@@ -40,14 +40,10 @@ public class AppState {
         AppRunning();
         //initiating AppState must be before login, only Welcome, login, register can be accessed, maybe dashboard
         availableScreens=new ScreenRouter();
-        availableScreens.addScreen(
-                new WelcomeScreen(consoleReader,availableScreens));
-        availableScreens.addScreen(
-                new LoginScreen(consoleReader,availableScreens));
-        availableScreens.addScreen(
-                new RegisterScreen(consoleReader,availableScreens));
-        availableScreens.addScreen(
-                new DashboardScreen(consoleReader,availableScreens));
+        availableScreens.addScreen(new WelcomeScreen(consoleReader,availableScreens));
+        availableScreens.addScreen(new LoginScreen(consoleReader,availableScreens));
+        availableScreens.addScreen(new RegisterScreen(consoleReader,availableScreens));
+        availableScreens.addScreen(new DashboardScreen(consoleReader,availableScreens));
     }
 
 

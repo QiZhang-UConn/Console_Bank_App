@@ -22,6 +22,16 @@ public class LinkedList<T> implements List<T> {
     }
 
 
+    //display method for debug purpose
+    public void display(){
+        Node<T> runner = head;
+        for (int i=0; i<size;i++){
+            System.out.println(runner.data);
+            runner=runner.nextNode;
+        }
+    }
+
+
     @Override //overriding interface function add
     public boolean add(T data) {
 
@@ -110,6 +120,7 @@ public class LinkedList<T> implements List<T> {
                 return runner.data;
             }
             i++;
+            runner=runner.nextNode;
         }
         return null;
     }

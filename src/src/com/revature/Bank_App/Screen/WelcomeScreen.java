@@ -22,7 +22,6 @@ public class WelcomeScreen extends Screen{
                 "3) Exits\n"+
                 "> ");
         String userDecision=consoleReader.readLine();
-
         switch (userDecision){
             case "1":
                 screenRouter.navigate("login");
