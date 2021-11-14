@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 
-
 /**
  * Singleton Design Pattern
  *  - Creational pattern
