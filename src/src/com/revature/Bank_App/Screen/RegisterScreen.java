@@ -19,23 +19,17 @@ public class RegisterScreen extends Screen{
 
     @Override
     public void render() throws Exception {
-        System.out.println("Register");
-        //TODO: implement Registration function
-        //TODO: implement Login Function
-        System.out.println("The user selected Register");
+        System.out.println("New User Registration");
         System.out.println("Please provide us with some basic information.");
+
         System.out.print("First name: ");
         String firstName = consoleReader.readLine();
-
         System.out.print("Last name: ");
         String lastName = consoleReader.readLine();
-
         System.out.print("Email: ");
         String email = consoleReader.readLine();
-
         System.out.print("Username: ");
         String username = consoleReader.readLine();
-
         System.out.print("Password: ");
         String password = consoleReader.readLine();
 
