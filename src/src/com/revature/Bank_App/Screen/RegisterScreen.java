@@ -1,61 +1,50 @@
 package com.revature.Bank_App.Screen;
 
 import com.revature.Bank_App.ObjectModel.AppUser;
-import com.revature.Bank_App.util.ConnectionFactory;
+import com.revature.Bank_App.Service.UserService;
 import com.revature.Bank_App.util.ScreenRouter;
 
 import java.io.BufferedReader;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.UUID;
 
 public class RegisterScreen extends Screen{
+    private final UserService userService;
+
 
     //RegisterScreen constructor
     public RegisterScreen(BufferedReader consoleReader, ScreenRouter screenRouter) {
         super("Register Screen","register", consoleReader, screenRouter);
+        userService=new UserService();
     }
 
     @Override
     public void render() throws Exception {
-        System.out.println("New User Registration");
-        System.out.println("Please provide us with some basic information.");
+        System.out.println("Welcome to New User Registration");
+        System.out.println("Type in you information to register");
 
-        System.out.print("First name: ");
-        String firstName = consoleReader.readLine();
-        System.out.print("Last name: ");
-        String lastName = consoleReader.readLine();
-        System.out.print("Email: ");
-        String email = consoleReader.readLine();
-        System.out.print("Username: ");
-        String username = consoleReader.readLine();
-        System.out.print("Password: ");
-        String password = consoleReader.readLine();
+        //Taking User Info
+        System.out.println("What's your first name?");
+        String firstname=consoleReader.readLine();
+        System.out.println("What's your last name?");
+        String lastname=consoleReader.readLine();
+        System.out.println("What's your Email address?");
+        String email=consoleReader.readLine();
+        System.out.println("Type in your username?");
+        String username=consoleReader.readLine();
+        System.out.println("Type in your password");
+        String password=consoleReader.readLine();
+        System.out.println("Please retype your password");
+        String re_password=consoleReader.readLine();
 
-        System.out.printf("Provided user first and last name: { \"firstName\": %s, \"lastName\": %s}\n", firstName, lastName);
 
-        AppUser newUser = new AppUser(firstName, lastName, email, username, password);
+        //System.out.println("Second password does not match the first!");
+        AppUser tempUser=new AppUser(firstname,lastname,email,username,password);
+        System.out.println(tempUser.getFirstname()+tempUser.getLastname()+tempUser.getEmail()+tempUser.getUsername()+tempUser.getPassword());
 
-        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
-
-            newUser.setId(UUID.randomUUID().toString());
-
-            String sql = "insert into bank_app_user (id, firstname, lastname, email, username, password) values (?, ?, ?, ?, ?, ?)";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, newUser.getId());
-            pstmt.setString(2, newUser.getFirstname());
-            pstmt.setString(3, newUser.getLastname());
-            pstmt.setString(4, newUser.getEmail());
-            pstmt.setString(5, newUser.getUsername());
-            pstmt.setString(6, newUser.getPassword());
-
-            int rowsInserted = pstmt.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-
+        if(userService.isRegistrationValid(tempUser,re_password)){
+            System.out.println("Yeah!");
         }
-
+        else {
+            System.out.println("Nah!");
+        }
     }
 }

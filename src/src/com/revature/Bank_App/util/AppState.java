@@ -50,9 +50,8 @@ public class AppState {
     public void initialState(){
         try {
             while(isRunning) availableScreens.navigate("welcome");
-        } catch (Exception e) {
-            System.out.println("Exiting App");
-            //e.printStackTrace();
+        } catch (Exception e){
+            e.printStackTrace();
         }
 
     }
