@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c976f973-2cd5-4123-93b5-1b1b5c36d1c6" name="Changes" comment="" />
+    <list default="true" id="c976f973-2cd5-4123-93b5-1b1b5c36d1c6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/out/production/Bank_App/com/revature/Bank_App/Bank_App_Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/out/production/Bank_App/com/revature/Bank_App/Bank_App_Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/out/production/Bank_App/com/revature/Bank_App/ObjectModel/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/out/production/Bank_App/com/revature/Bank_App/ObjectModel/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/out/production/Bank_App/com/revature/Bank_App/Screen/RegisterScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/out/production/Bank_App/com/revature/Bank_App/Screen/RegisterScreen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/out/production/Bank_App/com/revature/Bank_App/util/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/out/production/Bank_App/com/revature/Bank_App/util/ConnectionFactory.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +34,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />

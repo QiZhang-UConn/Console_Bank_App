@@ -1,4 +1,8 @@
 log.md
-./target
 *.jar
 .properties
+/target
+/out
+*.class
+/.idea
+*~
