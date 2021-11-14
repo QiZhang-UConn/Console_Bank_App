@@ -12,15 +12,15 @@ public class WelcomeScreen extends Screen{
     }
 
     /*
-        Welcome Screen guides user to make selection either go to LoginScreen, RegisterScreen, or simply Exit
+        Welcome Screen guides user to make selection: go to LoginScreen, RegisterScreen, or simply Exit
      */
     @Override
     public void render() throws Exception {
         System.out.println("Welcome to the Bank App! Please make selections\n"+
                 "1) Login\n"+
                 "2) Register\n"+
-                "3) Exits\n"+
-                "> ");
+                "3) Exits\n");
+        System.out.printf(">");
         String userDecision=consoleReader.readLine();
         switch (userDecision){
             case "1":

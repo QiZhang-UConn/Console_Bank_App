@@ -19,17 +19,17 @@ import java.io.InputStreamReader;
 */
 public class AppState {
     private static boolean isRunning;//we want to go back to welcome unless user exit
-    private static boolean isAuthenticated;//For the purpose to access Dashboard and other private screens
-    private ScreenRouter availableScreens;
+    //private static boolean isAuthenticated;//For the purpose to access Dashboard and other private screens
+    private final ScreenRouter availableScreens;
 
 
     //       _________App condition variable control______________
     //App Started and is running
-    private void AppRunning(){isRunning=true;}
+    public static void AppRunning(){isRunning=true;}
     //User decided to exit
     public static void AppStopping(){isRunning=false;}
     //User logged in
-    private void userAuthenticated(){isAuthenticated=true;}
+    //private void userAuthenticated(){isAuthenticated=true;}
 
 
     //Constructor of AppState
@@ -51,7 +51,8 @@ public class AppState {
         try {
             while(isRunning) availableScreens.navigate("welcome");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Exiting App");
+            //e.printStackTrace();
         }
 
     }

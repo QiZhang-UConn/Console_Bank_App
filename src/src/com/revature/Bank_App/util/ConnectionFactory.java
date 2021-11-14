@@ -34,7 +34,7 @@ public class ConnectionFactory {
 
     private ConnectionFactory() {
         try {
-            props.load(new FileReader("resources/db.properties"));
+            props.load(new FileReader("/home/qi/Documents/training/211101-java-react-enterprise/qi_zhang_p0/resources/db.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
