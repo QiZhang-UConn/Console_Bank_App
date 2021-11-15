@@ -19,6 +19,9 @@ public class AppUser {
         this.username = username;
         this.password = password;
     }
+    //Overloaded version of AppUser Constructor for later use if data is not
+    //manually provided which depend on runtime result of certain function like query
+    public AppUser(){}
 
 
 
