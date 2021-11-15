@@ -49,12 +49,21 @@ public class UserService {
         if (registeredUser == null) {
             throw new DataPersistenceException("The user could not be persisted to the datasource!");
         }
-
         return true;
-
-
     }
 
+    public boolean UserLogin(String username, String password) throws DataPersistenceException {
+        if(username==null||username.trim().equals("")) return false;
+        if(username==null||username.trim().equals("")) return false;
+        AppUser tempUser=appUserDao.findByUsername(username);
+        if(tempUser==null) {
+            throw new DataPersistenceException("Username Not found");
+        }
+        if (tempUser.getPassword().equals(password)){
+            return true;
+        }
+        return false;
+    }
 
 
     //TODO: implement reusable user service functionality makes thing easier
