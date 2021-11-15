@@ -1,5 +1,6 @@
 package com.revature.Bank_App.Service;
 
+import com.revature.Bank_App.DAO.AppUserDao;
 import com.revature.Bank_App.Exceptions.InvalidRequestException;
 import com.revature.Bank_App.ObjectModel.AppUser;
 import com.revature.Bank_App.ObjectModel.RegisterUser;
@@ -12,6 +13,7 @@ import com.revature.Bank_App.ObjectModel.RegisterUser;
 */
 public class UserService {
     private AppUser sessionUser;//UserService takes in a temp AppUser and verify info
+    private AppUserDao appUserDao=new AppUserDao();
 
     //userService Constructor
     public UserService(){}
@@ -29,11 +31,20 @@ public class UserService {
         return true;
     }
 
-    public boolean RegisterNewUser(RegisterUser user){
-        if(!isRegistrationValid(user)){
-            throw new InvalidRequestException("Invalid User Information Provided");
+    //User Provided information ready for register
+    public boolean RegisterNewUser(RegisterUser user) {
+        //First check if input is valid
+        if (!isRegistrationValid(user)) throw new InvalidRequestException("Invalid User Information Provided");
+        //If Username founded raise Exception to notice user username occupied
+        if (!(appUserDao.findByUsername(user.getUsername()) == null)) {
+            if (!(appUserDao.findByEmail(user.getEmail()) == null)) {
+
+            } else {
+
+            }
+            return false;
         }
-        return false;
+        return true;
     }
 
 

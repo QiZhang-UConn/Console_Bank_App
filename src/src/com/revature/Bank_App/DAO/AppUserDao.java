@@ -16,8 +16,6 @@ import java.sql.SQLException;
 public class AppUserDao implements CrudDAO{
 
 
-
-
     //___________________________Find User from database____________________________
     public AppUser findByUsername(String username){
         try(Connection conn= ConnectionFactory.getInstance().getConnection()){
@@ -67,11 +65,11 @@ public class AppUserDao implements CrudDAO{
     }
 
 
-    public AppUser findByPassword(String email){
-        return null;
-    }
+   // public AppUser findByPassword(String email){
+  //      return null;
+  //  }
 
-    @Override
+    @Override//overriding method saving user info after registration
     public Object save(Object newObj) {
         return null;
     }
