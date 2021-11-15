@@ -1,6 +1,8 @@
 package com.revature.Bank_App.Service;
 
+import com.revature.Bank_App.Exceptions.InvalidRequestException;
 import com.revature.Bank_App.ObjectModel.AppUser;
+import com.revature.Bank_App.ObjectModel.RegisterUser;
 
 /*
     This is a general purpose service app, specialized for:
@@ -14,21 +16,27 @@ public class UserService {
     //userService Constructor
     public UserService(){}
 
-
-
-    public boolean isRegistrationValid(AppUser tempUser, String re_password){
-        if(!tempUser.getPassword().equals(re_password))
-            return false;//Check if 2 password match
-        else{
+    //Helper method checks if provided user info is null or empty string, prevent high cost invalid query
+    public boolean isRegistrationValid(RegisterUser tempUser){
+            //Check if 2 password match
+            if(!tempUser.getPassword().equals(tempUser.getRepass())) return false;
             //check if input is null or empty String
             if(tempUser.getFirstname()==null||tempUser.getFirstname().trim().equals("")) return false;
             if(tempUser.getLastname()==null||tempUser.getLastname().trim().equals("")) return false;
             if(tempUser.getEmail()==null||tempUser.getEmail().trim().equals("")) return false;
             if(tempUser.getUsername()==null||tempUser.getUsername().trim().equals("")) return false;
             if(tempUser.getPassword()==null||tempUser.getPassword().trim().equals("")) return false;
-        }
         return true;
     }
+
+    public boolean RegisterNewUser(RegisterUser user){
+        if(!isRegistrationValid(user)){
+            throw new InvalidRequestException("Invalid User Information Provided");
+        }
+        return false;
+    }
+
+
 
     //TODO: implement reusable user service functionality makes thing easier
     //TODO: register user

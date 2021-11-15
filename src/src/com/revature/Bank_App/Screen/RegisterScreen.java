@@ -1,6 +1,7 @@
 package com.revature.Bank_App.Screen;
 
 import com.revature.Bank_App.ObjectModel.AppUser;
+import com.revature.Bank_App.ObjectModel.RegisterUser;
 import com.revature.Bank_App.Service.UserService;
 import com.revature.Bank_App.util.ScreenRouter;
 
@@ -37,10 +38,10 @@ public class RegisterScreen extends Screen{
 
 
         //System.out.println("Second password does not match the first!");
-        AppUser tempUser=new AppUser(firstname,lastname,email,username,password);
-        System.out.println(tempUser.getFirstname()+tempUser.getLastname()+tempUser.getEmail()+tempUser.getUsername()+tempUser.getPassword());
+        RegisterUser tempUser=new RegisterUser(firstname,lastname,email,username,password,re_password);
+        //System.out.println(tempUser.getFirstname()+tempUser.getLastname()+tempUser.getEmail()+tempUser.getUsername()+tempUser.getPassword());
 
-        if(userService.isRegistrationValid(tempUser,re_password)){
+        if(userService.isRegistrationValid(tempUser)){
             System.out.println("Yeah!");
         }
         else {
