@@ -24,11 +24,28 @@ public class DashboardScreen extends Screen{
         System.out.println("Welcome to Dashboard!");
         System.out.println("What do you want to do today?");
         System.out.println("1) Create an account\n"+
-                           "2) Deposit money into an account"+
-                           "3) Withdraw money from an account"+
-                           "4) View Account balance"+//might be removed so shows directly in dashboard
-                           "5) View transaction of an account"+
-                           "6) Transfer money between accounts"+
+                           "2) Deposit money into an account\n"+
+                           "3) Withdraw money from an account\n"+
+                           "4) View Account balance\n"+//might be removed so shows directly in dashboard
+                           "5) View transaction of an account\n"+
+                           "6) Transfer money between accounts\n"+
                            "7) Exit");
+        String userSelection=consoleReader.readLine();
+        switch (userSelection){
+            case "1":
+                //TODO: Create an account
+            case "2":
+                //TODO: Deposit page implementation
+            case "3":
+                //TODO: Withdraw page implementation
+            case "4":
+                //TODO: View Account balance
+            case "5":
+                //TODO: Transaction of an account
+            case "6":
+                //TODO: Transfer money between accounts
+            case "7":
+                screenRouter.navigate("welcome");
+        }
     }
 }
