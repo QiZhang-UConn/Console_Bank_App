@@ -1,6 +1,7 @@
 package com.revature.Bank_App.Service;
 
 import com.revature.Bank_App.DAO.AppUserDao;
+import com.revature.Bank_App.Exceptions.DataPersistenceException;
 import com.revature.Bank_App.Exceptions.InvalidRequestException;
 import com.revature.Bank_App.ObjectModel.AppUser;
 import com.revature.Bank_App.ObjectModel.RegisterUser;
@@ -32,19 +33,26 @@ public class UserService {
     }
 
     //User Provided information ready for register
-    public boolean RegisterNewUser(RegisterUser user) {
+    public boolean RegisterNewUser(RegisterUser user) throws DataPersistenceException {
         //First check if input is valid
-        if (!isRegistrationValid(user)) throw new InvalidRequestException("Invalid User Information Provided");
+        if (!isRegistrationValid(user))
+            throw new InvalidRequestException("Invalid User Information Provided");
         //If Username founded raise Exception to notice user username occupied
-        if (!(appUserDao.findByUsername(user.getUsername()) == null)) {
-            if (!(appUserDao.findByEmail(user.getEmail()) == null)) {
-
-            } else {
-
-            }
-            return false;
+        if (!(appUserDao.findByUsername(user.getUsername()) == null))
+            throw new DataPersistenceException("Username occupied, please input another one");
+        //If Email founded prompt user to re-enter info
+        if (!(appUserDao.findByEmail(user.getEmail()) == null))
+            throw new DataPersistenceException("Email occupied, please input another one");
+        //Otherwise, save the user info to database
+        AppUser registeredUser = appUserDao.save(user);
+        //Raise exception if data doesn't save correctly
+        if (registeredUser == null) {
+            throw new DataPersistenceException("The user could not be persisted to the datasource!");
         }
+
         return true;
+
+
     }
 
 

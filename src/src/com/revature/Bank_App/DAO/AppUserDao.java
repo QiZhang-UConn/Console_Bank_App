@@ -1,6 +1,7 @@
 package com.revature.Bank_App.DAO;
 
 import com.revature.Bank_App.ObjectModel.AppUser;
+import com.revature.Bank_App.ObjectModel.RegisterUser;
 import com.revature.Bank_App.util.ConnectionFactory;
 import com.revature.Bank_App.util.List;
 
@@ -8,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.UUID;
 
 
 /*
@@ -63,7 +65,33 @@ public class AppUserDao implements CrudDAO{
         }
         return null;
     }
-
+    public AppUser save(RegisterUser validUser){
+        //Taking Child class, convert to App User
+        AppUser newUser= new AppUser(validUser.getFirstname(),validUser.getLastname(),
+                        validUser.getEmail(),validUser.getUsername(),validUser.getPassword());
+        try(Connection conn=ConnectionFactory.getInstance().getConnection()){
+            newUser.setId(UUID.randomUUID().toString());
+            //prepare SQL statement
+            String sql_statement=
+                    "insert into bank_app_user (id, firstname, lastname, email, username, password) values (?, ?, ?, ?, ?, ?)";
+            PreparedStatement pre_statement=conn.prepareStatement(sql_statement);
+            pre_statement.setString(1,newUser.getId());
+            pre_statement.setString(2,newUser.getFirstname());
+            pre_statement.setString(3,newUser.getLastname());
+            pre_statement.setString(4,newUser.getEmail());
+            pre_statement.setString(5,newUser.getUsername());
+            pre_statement.setString(6,newUser.getPassword());
+            //Execute statement and save
+            pre_statement.execute();
+            int rowsInserted = pre_statement.executeUpdate();
+            if(rowsInserted!=0){
+                return newUser;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 
    // public AppUser findByPassword(String email){
   //      return null;
