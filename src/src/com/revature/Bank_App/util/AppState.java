@@ -1,6 +1,5 @@
 package com.revature.Bank_App.util;
 
-import com.revature.Bank_App.Screen.DashboardScreen;
 import com.revature.Bank_App.Screen.LoginScreen;
 import com.revature.Bank_App.Screen.RegisterScreen;
 import com.revature.Bank_App.Screen.WelcomeScreen;
@@ -37,17 +36,19 @@ public class AppState {
         //input reader pass down to every screen for convenience
         BufferedReader consoleReader=new BufferedReader(new InputStreamReader(System.in));
         //Once AppState is instantiated, means someone is using the app
+        System.out.println(isRunning);
         AppRunning();
+        System.out.println(isRunning);
         //initiating AppState must be before login, only Welcome, login, register can be accessed, maybe dashboard
         availableScreens=new ScreenRouter();
         availableScreens.addScreen(new WelcomeScreen(consoleReader,availableScreens));
         availableScreens.addScreen(new LoginScreen(consoleReader,availableScreens));
         availableScreens.addScreen(new RegisterScreen(consoleReader,availableScreens));
-        availableScreens.addScreen(new DashboardScreen(consoleReader,availableScreens));
     }
 
 
     public void initialState(){
+
         try {
             while(isRunning) availableScreens.navigate("welcome");
         } catch (Exception e){

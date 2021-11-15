@@ -2,15 +2,18 @@ package com.revature.Bank_App.Screen;
 
 import com.revature.Bank_App.Exceptions.DataPersistenceException;
 import com.revature.Bank_App.Exceptions.InvalidRequestException;
+import com.revature.Bank_App.ObjectModel.AppUser;
 import com.revature.Bank_App.Service.UserService;
 import com.revature.Bank_App.util.ScreenRouter;
 import java.io.BufferedReader;
 
 public class LoginScreen extends Screen{
     UserService userService=new UserService();
+    private AppUser sessionUser=new AppUser();
+
     //LoginScreen constructor
     public LoginScreen(BufferedReader consoleReader, ScreenRouter screenRouter) {
-        super("Register Screen","register", consoleReader, screenRouter);
+        super("Login Screen","login", consoleReader, screenRouter);
     }
 
     @Override
@@ -22,8 +25,9 @@ public class LoginScreen extends Screen{
         String password=consoleReader.readLine();
 
         try{
-            boolean isLogin=userService.UserLogin(username,password);
-            if(isLogin) System.out.println("Welcome Back Bank App User");
+            sessionUser=userService.UserLogin(username,password);
+            if(!(sessionUser==null)) System.out.println("Welcome Back Bank App User");
+            screenRouter.addScreen(new DashboardScreen(consoleReader,screenRouter,sessionUser));
 
         }catch(Exception e){
             e.printStackTrace();

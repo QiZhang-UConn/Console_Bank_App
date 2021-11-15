@@ -7,17 +7,28 @@ import com.revature.Bank_App.ObjectModel.AppUser;
 import com.revature.Bank_App.ObjectModel.RegisterUser;
 
 /*
-    This is a general purpose service app, specialized for:
+    This is a general purpose service class for AppUser, specialized for:
         1.verifying valid input of registration,
         2.verifying password matching login
         3.main user of uerDAO
+        4.Hold a sessionUser which is an authenticated user
 */
 public class UserService {
     private AppUser sessionUser;//UserService takes in a temp AppUser and verify info
     private AppUserDao appUserDao=new AppUserDao();
 
+
+
     //userService Constructor
+    public UserService(AppUser sessionUser){this.sessionUser=sessionUser;}
     public UserService(){}
+
+
+
+    //Indicate if user authenticated
+    public boolean isSessionExit(){return !(sessionUser==null);}
+
+
 
     //Helper method checks if provided user info is null or empty string, prevent high cost invalid query
     public boolean isRegistrationValid(RegisterUser tempUser){
@@ -31,6 +42,8 @@ public class UserService {
             if(tempUser.getPassword()==null||tempUser.getPassword().trim().equals("")) return false;
         return true;
     }
+
+
 
     //User Provided information ready for register
     public boolean RegisterNewUser(RegisterUser user) throws DataPersistenceException {
@@ -52,22 +65,21 @@ public class UserService {
         return true;
     }
 
-    public boolean UserLogin(String username, String password) throws DataPersistenceException {
-        if(username==null||username.trim().equals("")) return false;
-        if(username==null||username.trim().equals("")) return false;
+
+
+    //User Login
+    public AppUser UserLogin(String username, String password) throws DataPersistenceException {
+        if(username==null||username.trim().equals("")) return null;
+        if(username==null||username.trim().equals("")) return null;
         AppUser tempUser=appUserDao.findByUsername(username);
         if(tempUser==null) {
             throw new DataPersistenceException("Username Not found");
         }
         if (tempUser.getPassword().equals(password)){
-            return true;
+            sessionUser=tempUser;
+            return sessionUser;
         }
-        return false;
+        return null;
     }
 
-
-    //TODO: implement reusable user service functionality makes thing easier
-    //TODO: register user
-    //TODO: verifying authentication
-    //TODO: session manipulation
 }
