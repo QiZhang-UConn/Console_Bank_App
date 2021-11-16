@@ -5,6 +5,8 @@ import com.revature.Bank_App.util.ScreenRouter;
 
 import java.io.BufferedReader;
 
+import static com.revature.Bank_App.util.AppState.AppStopping;
+
 public class DashboardScreen extends Screen{
     private final AppUser sessionUser;
 
@@ -33,19 +35,19 @@ public class DashboardScreen extends Screen{
         String userSelection=consoleReader.readLine();
         switch (userSelection){
             case "1":
-                //TODO: Create an account
+                //screenRouter.navigate("login");
+                break;
             case "2":
-                //TODO: Deposit page implementation
+                //screenRouter.navigate("register");
+                break;
             case "3":
-                //TODO: Withdraw page implementation
-            case "4":
-                //TODO: View Account balance
-            case "5":
-                //TODO: Transaction of an account
-            case "6":
-                //TODO: Transfer money between accounts
-            case "7":
-                screenRouter.navigate("welcome");
+                //System.out.println("Bye~");
+                //AppStopping();
+            case "throw exception":
+                throw new RuntimeException();
+            default:
+                System.out.println("The user made an invalid selection");
+
         }
     }
 }
