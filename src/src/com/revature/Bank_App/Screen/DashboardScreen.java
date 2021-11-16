@@ -28,7 +28,7 @@ public class DashboardScreen extends Screen{
         screenRouter.addScreen(new AccountCreationScreen(consoleReader,screenRouter,accountService));
         screenRouter.addScreen(new DepositScreen(consoleReader,screenRouter));
         screenRouter.addScreen(new WithdrawScreen(consoleReader,screenRouter));
-        screenRouter.addScreen(new AccountDetailScreen(consoleReader,screenRouter));
+        screenRouter.addScreen(new AccountDetailScreen(consoleReader,screenRouter,accountService));
         screenRouter.addScreen(new TransactionScreen(consoleReader,screenRouter));
         screenRouter.addScreen(new MoneyTransferScreen(consoleReader,screenRouter));
     }

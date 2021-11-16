@@ -50,6 +50,10 @@ public class AccountService {
         }
         return accountList;
     }
+    public LinkedList<Account> getAccounts(){
+        return accounts;
+    }
+
 
     public void createAccount(String accountType) {
         int type_id;
