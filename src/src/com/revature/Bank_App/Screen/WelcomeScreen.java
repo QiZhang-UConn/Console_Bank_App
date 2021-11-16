@@ -20,7 +20,7 @@ public class WelcomeScreen extends Screen{
                 "1) Login\n"+
                 "2) Register\n"+
                 "3) Exits\n");
-        System.out.printf(">");
+        System.out.print(">");
         String userDecision=consoleReader.readLine();
         switch (userDecision){
             case "1":
@@ -32,6 +32,7 @@ public class WelcomeScreen extends Screen{
             case "3":
                 System.out.println("Bye~");
                 AppStopping();
+                break;
             case "throw exception":
                 throw new RuntimeException();
             default:

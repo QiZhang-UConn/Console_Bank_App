@@ -28,7 +28,7 @@ public class AppState {
     //User decided to exit
     public static void AppStopping(){isRunning=false;}
     //User logged in
-    //private void userAuthenticated(){isAuthenticated=true;}
+
 
 
     //Constructor of AppState
@@ -36,9 +36,7 @@ public class AppState {
         //input reader pass down to every screen for convenience
         BufferedReader consoleReader=new BufferedReader(new InputStreamReader(System.in));
         //Once AppState is instantiated, means someone is using the app
-        System.out.println(isRunning);
         AppRunning();
-        System.out.println(isRunning);
         //initiating AppState must be before login, only Welcome, login, register can be accessed, maybe dashboard
         availableScreens=new ScreenRouter();
         availableScreens.addScreen(new WelcomeScreen(consoleReader,availableScreens));
@@ -48,9 +46,10 @@ public class AppState {
 
 
     public void initialState(){
-
         try {
-            while(isRunning) availableScreens.navigate("welcome");
+            while(isRunning){
+                availableScreens.navigate("welcome");
+            }
         } catch (Exception e){
             e.printStackTrace();
         }

@@ -39,7 +39,7 @@ public class LinkedList<T> implements List<T> {
         if (data == null) {return false;}
 
         //otherwise, instantiate a new node and add
-        Node<T> newNode = new Node<T>(data);
+        Node<T> newNode = new Node<>(data);
         if (head == null) { //if head is null the added node will be head and tail at the same time
             tail = head = newNode;
         } else {
@@ -109,17 +109,15 @@ public class LinkedList<T> implements List<T> {
 
     @Override //overriding parent function of get by passing index
     public T get(int index) {
-        if (index<0 || index>size){//providing index out of bound, no need to continue
+        if (index<0 || index>=size){//providing index out of bound, no need to continue
             throw new RuntimeException("index value out of bound");
         }
         //otherwise, we loop around until the desired node
-        int i=0;
         Node<T> runner=head;
-        while(runner.nextNode!=null){
+        for (int i=0; i<=index; i++){
             if (i==index){
                 return runner.data;
             }
-            i++;
             runner=runner.nextNode;
         }
         return null;
