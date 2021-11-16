@@ -22,15 +22,8 @@ public class DashboardScreen extends Screen{
         super("Dashboard Screen","dashboard", consoleReader, screenRouter);
         //Takes over the session user by enclosed userService function
         this.userService=userService;
-        AccountDao accountDao=new AccountDao();
-        accountService=new AccountService(userService,accountDao);
         //Once Dashboard Instantiated, user allowed to access the private screens
-        screenRouter.addScreen(new AccountCreationScreen(consoleReader,screenRouter,accountService));
-        screenRouter.addScreen(new DepositScreen(consoleReader,screenRouter));
-        screenRouter.addScreen(new WithdrawScreen(consoleReader,screenRouter));
-        screenRouter.addScreen(new AccountDetailScreen(consoleReader,screenRouter,accountService));
-        screenRouter.addScreen(new TransactionScreen(consoleReader,screenRouter));
-        screenRouter.addScreen(new MoneyTransferScreen(consoleReader,screenRouter));
+
     }
 
     @Override

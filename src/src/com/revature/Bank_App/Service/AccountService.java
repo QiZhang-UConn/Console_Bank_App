@@ -12,25 +12,15 @@ import java.util.UUID;
     This is a general purpose helper class for managing
 */
 public class AccountService {
-    private AppUser sessionUser;
     private AccountDao accountDao;
-    private LinkedList<Account> accounts;
-    UserService userService;
+    private UserService userService;
 
     public AccountService(UserService userService, AccountDao accountDao){
         this.userService=userService;
-        sessionUser= userService.exportSessionUser();
-        accounts=sessionUser.exportAccountList();
         this.accountDao=accountDao;
     }
 
-    public int getAccountNum() {return accounts.getSize();}
-
-
-
-
-
-
+    public int getAccountNum() {return userService.howManyAccount();}
 
 
 
@@ -45,13 +35,14 @@ public class AccountService {
     }
     public LinkedList<String> currentAccount(){
         LinkedList<String> accountList=new LinkedList<>();
-        for(int i=0; i<accounts.getSize();i++){
+        LinkedList<Account> accounts=getAccounts();
+        for(int i=0; i<getAccountNum();i++){
             accountList.add(accounts.get(i).getAccountName());
         }
         return accountList;
     }
     public LinkedList<Account> getAccounts(){
-        return accounts;
+        return userService.exportAccount();
     }
 
 
@@ -68,11 +59,11 @@ public class AccountService {
                 type_id=3;
                 break;
         }
-        Account tempAccount=new Account(accountType,UUID.randomUUID().toString(),sessionUser.getUsername());
+        Account tempAccount=new Account(accountType,UUID.randomUUID().toString(),userService.getSessionUsername());
         Account newAccount=accountDao.save(tempAccount);
         if(newAccount!=null){
             System.out.println(accountType+" account created successfully");
-            sessionUser.addAccount(newAccount);
+            userService.UserAddAccount(newAccount);
         }
 
     }

@@ -3,8 +3,10 @@ package com.revature.Bank_App.Service;
 import com.revature.Bank_App.DAO.AppUserDao;
 import com.revature.Bank_App.Exceptions.DataPersistenceException;
 import com.revature.Bank_App.Exceptions.InvalidRequestException;
+import com.revature.Bank_App.ObjectModel.Account;
 import com.revature.Bank_App.ObjectModel.AppUser;
 import com.revature.Bank_App.ObjectModel.RegisterUser;
+import com.revature.Bank_App.util.LinkedList;
 
 /*
     This is a general purpose service class for AppUser, specialized for:
@@ -29,6 +31,18 @@ public class UserService {
     public boolean isSessionExit(){return !(sessionUser==null);}
     public void sessionLogout(){sessionUser=null;}
     public AppUser exportSessionUser(){return sessionUser;}
+
+
+    //Helper for to manipulate sessionUser data without directly passing sessionUser
+    public int howManyAccount(){ return sessionUser.HowManyAccount();}
+    public LinkedList<Account> exportAccount(){return sessionUser.getAccountList();}
+    public String getSessionUsername(){return sessionUser.getUsername();}
+    public boolean UserAddAccount(Account account){
+        sessionUser.addAccount(account);
+        return true;
+    }
+
+
 
 
     //Helper method checks if provided user info is null or empty string, prevent high cost invalid query
@@ -58,9 +72,9 @@ public class UserService {
         if (!(appUserDao.findByEmail(user.getEmail()) == null))
             throw new DataPersistenceException("Email occupied, please input another one");
         //Otherwise, save the user info to database
-        AppUser registeredUser = appUserDao.save(user);
+        sessionUser = appUserDao.save(user);
         //Raise exception if data doesn't save correctly
-        if (registeredUser == null) {
+        if (sessionUser == null) {
             throw new DataPersistenceException("The user could not be persisted to the datasource!");
         }
         return true;

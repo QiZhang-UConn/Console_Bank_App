@@ -1,9 +1,9 @@
 package com.revature.Bank_App.util;
 
+import com.revature.Bank_App.DAO.AccountDao;
 import com.revature.Bank_App.DAO.AppUserDao;
-import com.revature.Bank_App.Screen.LoginScreen;
-import com.revature.Bank_App.Screen.RegisterScreen;
-import com.revature.Bank_App.Screen.WelcomeScreen;
+import com.revature.Bank_App.Screen.*;
+import com.revature.Bank_App.Service.AccountService;
 import com.revature.Bank_App.Service.UserService;
 
 import java.io.BufferedReader;
@@ -23,7 +23,6 @@ public class AppState {
     //private static boolean isAuthenticated;//For the purpose to access Dashboard and other private screens
     private final ScreenRouter availableScreens;
 
-
     //       _________App condition variable control______________
     //App Started and is running
     public static void AppRunning(){isRunning=true;}
@@ -41,11 +40,21 @@ public class AppState {
         AppRunning();
         AppUserDao userDAO = new AppUserDao();
         UserService userService = new UserService(userDAO);
+        AccountDao accountDao=new AccountDao();
+        AccountService accountService=new AccountService(userService,accountDao);
         //initiating AppState must be before login, only Welcome, login, register can be accessed, maybe dashboard
         availableScreens=new ScreenRouter();
         availableScreens.addScreen(new WelcomeScreen(consoleReader,availableScreens,userService));
         availableScreens.addScreen(new LoginScreen(consoleReader,availableScreens,userService));
         availableScreens.addScreen(new RegisterScreen(consoleReader,availableScreens,userService));
+        availableScreens.addScreen(new DashboardScreen(consoleReader,availableScreens,userService));
+        availableScreens.addScreen(new AccountCreationScreen(consoleReader,availableScreens,accountService));
+        availableScreens.addScreen(new DepositScreen(consoleReader,availableScreens));
+        availableScreens.addScreen(new WithdrawScreen(consoleReader,availableScreens));
+        availableScreens.addScreen(new AccountDetailScreen(consoleReader,availableScreens,accountService));
+        availableScreens.addScreen(new TransactionScreen(consoleReader,availableScreens));
+        availableScreens.addScreen(new MoneyTransferScreen(consoleReader,availableScreens));
+
     }
 
 

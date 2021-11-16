@@ -16,7 +16,7 @@ public class RegisterScreen extends Screen {
     //RegisterScreen constructor
     public RegisterScreen(BufferedReader consoleReader, ScreenRouter screenRouter, UserService userService) {
         super("Register Screen", "register", consoleReader, screenRouter);
-        this.userService = new UserService();
+        this.userService = userService;
     }
 
     @Override

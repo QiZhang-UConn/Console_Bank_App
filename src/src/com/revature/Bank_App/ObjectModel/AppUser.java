@@ -26,7 +26,8 @@ public class AppUser {
     public AppUser(){}
 
     //__________________Account List Section_____________
-    public LinkedList<Account> exportAccountList(){return accounts;}
+    public LinkedList<Account> getAccountList(){return accounts;}
+    public int HowManyAccount(){return accounts.getSize();}
     public void addAccount(Account account){accounts.add(account);}
 
 
@@ -97,7 +98,4 @@ public class AppUser {
         return this.password;
     }
 
-    public LinkedList<Account> getAccounts() {
-        return accounts;
-    }
 }

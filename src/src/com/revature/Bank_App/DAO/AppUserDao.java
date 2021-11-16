@@ -98,7 +98,6 @@ public class AppUserDao implements CrudDAO{
             pre_statement.setString(5,newUser.getUsername());
             pre_statement.setString(6,newUser.getPassword());
             //Execute statement and save
-            pre_statement.execute();
             int rowsInserted = pre_statement.executeUpdate();
             if(rowsInserted!=0){
                 return newUser;

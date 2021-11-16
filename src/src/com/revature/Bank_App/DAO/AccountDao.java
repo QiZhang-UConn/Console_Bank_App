@@ -27,7 +27,6 @@ public class AccountDao implements CrudDAO{
             pre_statement.setInt(2,account.getType());
             pre_statement.setString(3,account.getUsername());
             //Execute statement and save
-            pre_statement.execute();
             int rowsInserted = pre_statement.executeUpdate();
             if(rowsInserted!=0){
                 newAccount=account;
