@@ -1,5 +1,6 @@
 package com.revature.Bank_App.DAO;
 
+import com.revature.Bank_App.ObjectModel.Account;
 import com.revature.Bank_App.ObjectModel.AppUser;
 import com.revature.Bank_App.ObjectModel.RegisterUser;
 import com.revature.Bank_App.util.ConnectionFactory;
@@ -35,6 +36,21 @@ public class AppUserDao implements CrudDAO{
                 queryUser.setFirstname(result.getString("firstname"));
                 queryUser.setLastname(result.getString("lastname"));
                 queryUser.setEmail((result.getString("email")));
+                String sql_statement2="select * from accounts where username=?";
+                PreparedStatement pre_statement2= conn.prepareStatement(sql_statement2);
+                pre_statement2.setString(1, queryUser.getUsername());
+                ResultSet result2=pre_statement2.executeQuery();
+                while(result2.next()){
+                    Account tempAccount=new Account();
+                    tempAccount.setAccountNumber(result2.getString("account_id"));
+                    tempAccount.setUsername(result2.getString("username"));
+                    tempAccount.setAccountBalance(result2.getDouble("balance"));
+                    int type=result2.getInt("type_id");
+                    if(type==1) tempAccount.setAccountName("checking");
+                    if(type==2) tempAccount.setAccountName("saving");
+                    if(type==3) tempAccount.setAccountName("investment");
+                    queryUser.addAccount(tempAccount);
+                }
                 return queryUser;
             }
         }catch(SQLException e) {

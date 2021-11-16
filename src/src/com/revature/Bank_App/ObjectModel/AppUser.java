@@ -97,5 +97,7 @@ public class AppUser {
         return this.password;
     }
 
-
+    public LinkedList<Account> getAccounts() {
+        return accounts;
+    }
 }

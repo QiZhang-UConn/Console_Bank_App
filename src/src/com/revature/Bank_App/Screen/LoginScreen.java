@@ -30,6 +30,7 @@ public class LoginScreen extends Screen{
             sessionUser=userService.UserLogin(username,password);
             if(!(sessionUser==null)) System.out.println("Welcome Back Bank App User");
             screenRouter.addScreen(new DashboardScreen(consoleReader,screenRouter,userService));
+            System.out.println(sessionUser.getAccounts().toString());
             screenRouter.navigate("dashboard");
         }catch(Exception e){
             e.printStackTrace();

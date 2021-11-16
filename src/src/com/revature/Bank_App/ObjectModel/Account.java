@@ -7,9 +7,9 @@ public class Account {
         Abstract Account parent
      */
     private double accountBalance;
-    private final String accountName;
-    private final String accountNumber;
-    private final String username;
+    private String accountName;
+    private String accountNumber;
+    private String username;
     private LinkedList<TransactionNode> transaction;
 
     public Account(String accountName,String accountNumber,String username){
@@ -17,7 +17,7 @@ public class Account {
         this.accountNumber=accountNumber;
         this.username=username;
     }
-
+    public Account(){};
 
     public int getType(){
         if(accountName=="checking") return 1;
@@ -25,8 +25,6 @@ public class Account {
         if(accountName=="investment") return 3;
         return 0;
     }
-
-
 
     //___________________________Getter Section__________________________
     public double getAccountBalance() {return accountBalance;}
@@ -41,13 +39,9 @@ public class Account {
     public void addTransaction(TransactionNode transNode) {
         this.transaction.add(transNode);
     }
-
-
-//     Might put to constructor
-//    public void setAccountNumber(String accountNumber) {
-//        this.accountNumber = accountNumber;
-//    }
-
+    public void setAccountName(String accountName) {this.accountName = accountName;}
+    public void setAccountNumber(String accountNumber) {this.accountNumber = accountNumber;}
+    public void setUsername(String username) {this.username = username;}
 
 
 
