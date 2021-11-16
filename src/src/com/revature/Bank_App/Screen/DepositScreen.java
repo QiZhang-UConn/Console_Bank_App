@@ -7,8 +7,8 @@ import java.io.BufferedReader;
 public class DepositScreen extends Screen{
 
     //DepositScreen Constructor
-    public DepositScreen(String screenName, String routingString, BufferedReader consoleReader, ScreenRouter screenRouter) {
-        super(screenName, routingString, consoleReader, screenRouter);
+    public DepositScreen(BufferedReader consoleReader, ScreenRouter screenRouter) {
+        super("Deposit Screen", "deposit", consoleReader, screenRouter);
     }
 
     @Override

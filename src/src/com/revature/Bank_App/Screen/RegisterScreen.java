@@ -10,13 +10,13 @@ import com.revature.Bank_App.util.ScreenRouter;
 import java.io.BufferedReader;
 
 public class RegisterScreen extends Screen {
-    private final UserService userService;
+    private UserService userService;
 
 
     //RegisterScreen constructor
-    public RegisterScreen(BufferedReader consoleReader, ScreenRouter screenRouter) {
+    public RegisterScreen(BufferedReader consoleReader, ScreenRouter screenRouter, UserService userService) {
         super("Register Screen", "register", consoleReader, screenRouter);
-        userService = new UserService();
+        this.userService = new UserService();
     }
 
     @Override

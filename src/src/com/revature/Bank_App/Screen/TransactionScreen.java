@@ -7,8 +7,8 @@ import java.io.BufferedReader;
 public class TransactionScreen extends Screen{
 
     //TransactionScreen Constructor
-    public TransactionScreen(String screenName, String routingString, BufferedReader consoleReader, ScreenRouter screenRouter) {
-        super(screenName, routingString, consoleReader, screenRouter);
+    public TransactionScreen(BufferedReader consoleReader, ScreenRouter screenRouter) {
+        super("Transaction History Screen", "transaction", consoleReader, screenRouter);
     }
 
     @Override

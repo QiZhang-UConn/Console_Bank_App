@@ -5,12 +5,13 @@ import com.revature.Bank_App.util.ScreenRouter;
 import java.io.BufferedReader;
 
 public class MoneyTransferScreen extends Screen{
-    public MoneyTransferScreen(String screenName, String routingString, BufferedReader consoleReader, ScreenRouter screenRouter) {
-        super(screenName, routingString, consoleReader, screenRouter);
+    public MoneyTransferScreen(BufferedReader consoleReader, ScreenRouter screenRouter) {
+        super("Money Transfer Screen", "transfer", consoleReader, screenRouter);
     }
 
     @Override
     public void render() throws Exception {
+        System.out.println("transfer");
         //TODO: implement Transfer between accounts method
     }
 }

@@ -7,8 +7,8 @@ import java.io.BufferedReader;
 public class WithdrawScreen extends Screen{
 
     //WithdrawScreen Constructor
-    public WithdrawScreen(String screenName, String routingString, BufferedReader consoleReader, ScreenRouter screenRouter) {
-        super(screenName, routingString, consoleReader, screenRouter);
+    public WithdrawScreen(BufferedReader consoleReader, ScreenRouter screenRouter) {
+        super("Withdraw Screen", "withdraw",consoleReader, screenRouter);
     }
 
 

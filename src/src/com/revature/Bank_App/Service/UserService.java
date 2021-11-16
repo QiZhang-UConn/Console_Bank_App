@@ -21,13 +21,13 @@ public class UserService {
 
     //userService Constructor
     public UserService(AppUser sessionUser){this.sessionUser=sessionUser;}
+    public UserService(AppUserDao userDao){appUserDao=userDao;}
     public UserService(){}
-
 
 
     //Indicate if user authenticated
     public boolean isSessionExit(){return !(sessionUser==null);}
-
+    public void sessionLogout(){sessionUser=null;}
 
 
     //Helper method checks if provided user info is null or empty string, prevent high cost invalid query

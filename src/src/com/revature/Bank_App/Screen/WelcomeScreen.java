@@ -1,14 +1,16 @@
 package com.revature.Bank_App.Screen;
 
+import com.revature.Bank_App.Service.UserService;
 import com.revature.Bank_App.util.ScreenRouter;
 import java.io.BufferedReader;
 import static com.revature.Bank_App.util.AppState.AppStopping;
 
 public class WelcomeScreen extends Screen{
-
+    private UserService userService;
     //WelcomeScreen Constructor
-    public WelcomeScreen(BufferedReader consoleReader, ScreenRouter screenRouter) {
+    public WelcomeScreen(BufferedReader consoleReader, ScreenRouter screenRouter, UserService userService) {
         super("Welcome Screen","welcome", consoleReader, screenRouter);
+        this.userService=userService;
     }
 
     /*

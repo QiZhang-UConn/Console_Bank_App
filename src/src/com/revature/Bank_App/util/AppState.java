@@ -1,8 +1,10 @@
 package com.revature.Bank_App.util;
 
+import com.revature.Bank_App.DAO.AppUserDao;
 import com.revature.Bank_App.Screen.LoginScreen;
 import com.revature.Bank_App.Screen.RegisterScreen;
 import com.revature.Bank_App.Screen.WelcomeScreen;
+import com.revature.Bank_App.Service.UserService;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -37,11 +39,13 @@ public class AppState {
         BufferedReader consoleReader=new BufferedReader(new InputStreamReader(System.in));
         //Once AppState is instantiated, means someone is using the app
         AppRunning();
+        AppUserDao userDAO = new AppUserDao();
+        UserService userService = new UserService(userDAO);
         //initiating AppState must be before login, only Welcome, login, register can be accessed, maybe dashboard
         availableScreens=new ScreenRouter();
-        availableScreens.addScreen(new WelcomeScreen(consoleReader,availableScreens));
-        availableScreens.addScreen(new LoginScreen(consoleReader,availableScreens));
-        availableScreens.addScreen(new RegisterScreen(consoleReader,availableScreens));
+        availableScreens.addScreen(new WelcomeScreen(consoleReader,availableScreens,userService));
+        availableScreens.addScreen(new LoginScreen(consoleReader,availableScreens,userService));
+        availableScreens.addScreen(new RegisterScreen(consoleReader,availableScreens,userService));
     }
 
 
