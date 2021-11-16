@@ -1,6 +1,8 @@
 package com.revature.Bank_App.Screen;
 
+import com.revature.Bank_App.DAO.AccountDao;
 import com.revature.Bank_App.ObjectModel.AppUser;
+import com.revature.Bank_App.Service.AccountService;
 import com.revature.Bank_App.Service.UserService;
 import com.revature.Bank_App.util.ScreenRouter;
 
@@ -13,17 +15,20 @@ import static com.revature.Bank_App.util.AppState.AppStopping;
 */
 public class DashboardScreen extends Screen{
     private final UserService userService;
+    private AccountService accountService;
 
     //DashboardScreen Constructor
     public DashboardScreen(BufferedReader consoleReader, ScreenRouter screenRouter, UserService userService) {
         super("Dashboard Screen","dashboard", consoleReader, screenRouter);
         //Takes over the session user by enclosed userService function
         this.userService=userService;
+        AccountDao accountDao=new AccountDao();
+        accountService=new AccountService(userService,accountDao);
         //Once Dashboard Instantiated, user allowed to access the private screens
-        screenRouter.addScreen(new AccountCreationScreen(consoleReader,screenRouter));
+        screenRouter.addScreen(new AccountCreationScreen(consoleReader,screenRouter,accountService));
         screenRouter.addScreen(new DepositScreen(consoleReader,screenRouter));
         screenRouter.addScreen(new WithdrawScreen(consoleReader,screenRouter));
-        screenRouter.addScreen(new AccountCreationScreen(consoleReader,screenRouter));
+        screenRouter.addScreen(new AccountDetailScreen(consoleReader,screenRouter));
         screenRouter.addScreen(new TransactionScreen(consoleReader,screenRouter));
         screenRouter.addScreen(new MoneyTransferScreen(consoleReader,screenRouter));
     }

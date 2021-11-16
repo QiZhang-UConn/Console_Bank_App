@@ -1,5 +1,7 @@
 package com.revature.Bank_App.ObjectModel;
 
+import com.revature.Bank_App.util.LinkedList;
+
 public class AppUser {
     private String id;
     private String firstname;
@@ -7,7 +9,7 @@ public class AppUser {
     private String Email;
     private String username;
     private String password;
-    private Double balance;
+    private LinkedList<Account> accounts=new LinkedList<>();
 
 
 
@@ -22,6 +24,11 @@ public class AppUser {
     //Overloaded version of AppUser Constructor for later use if data is not
     //manually provided which depend on runtime result of certain function like query
     public AppUser(){}
+
+    //__________________Account List Section_____________
+    public LinkedList<Account> exportAccountList(){return accounts;}
+    public void addAccount(Account account){accounts.add(account);}
+
 
 
 
@@ -57,13 +64,6 @@ public class AppUser {
         this.password = password;
     }
 
-    //set AppUser Instance balance
-    //TODO: Need to create an Account class, set balance should not exist in final version
-    public void setBalance(Double balance) {
-        this.balance = balance;
-    }
-
-
 
 
     //__________Getters Section_____________
@@ -97,10 +97,5 @@ public class AppUser {
         return this.password;
     }
 
-    //AppUser instance return account balance
-    //TODO: Need an new Class Account, getBalance() should not exist in final
-    public Double getBalance(){
-        return this.balance;
-    }
 
 }

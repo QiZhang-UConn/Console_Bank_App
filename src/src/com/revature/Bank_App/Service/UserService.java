@@ -28,6 +28,7 @@ public class UserService {
     //Indicate if user authenticated
     public boolean isSessionExit(){return !(sessionUser==null);}
     public void sessionLogout(){sessionUser=null;}
+    public AppUser exportSessionUser(){return sessionUser;}
 
 
     //Helper method checks if provided user info is null or empty string, prevent high cost invalid query

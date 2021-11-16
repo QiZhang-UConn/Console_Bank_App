@@ -2,14 +2,29 @@ package com.revature.Bank_App.ObjectModel;
 
 import com.revature.Bank_App.util.LinkedList;
 
-public abstract class Account {
+public class Account {
     /*
         Abstract Account parent
      */
     private double accountBalance;
-    private String accountName;
-    private String accountNumber;
+    private final String accountName;
+    private final String accountNumber;
+    private final String username;
     private LinkedList<TransactionNode> transaction;
+
+    public Account(String accountName,String accountNumber,String username){
+        this.accountName=accountName;
+        this.accountNumber=accountNumber;
+        this.username=username;
+    }
+
+
+    public int getType(){
+        if(accountName=="checking") return 1;
+        if(accountName=="saving") return 2;
+        if(accountName=="investment") return 3;
+        return 0;
+    }
 
 
 
@@ -18,6 +33,7 @@ public abstract class Account {
     public String getAccountName() {return accountName;}
     public String getAccountNumber() {return accountNumber;}
     public LinkedList<TransactionNode> getTransaction() {return transaction;}
+    public String getUsername() {return username;}
 
 
     //___________________________Setter Section_____________________________
@@ -25,11 +41,6 @@ public abstract class Account {
     public void addTransaction(TransactionNode transNode) {
         this.transaction.add(transNode);
     }
-
-//     Might put to constructor
-//    public void setAccountName(String accountName) {
-//        this.accountName = accountName;
-//    }
 
 
 //     Might put to constructor
