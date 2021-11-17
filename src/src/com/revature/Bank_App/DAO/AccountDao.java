@@ -8,11 +8,11 @@ import com.revature.Bank_App.util.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.util.UUID;
 
 public class AccountDao implements CrudDAO{
-
-
 
 
 
@@ -37,6 +37,25 @@ public class AccountDao implements CrudDAO{
         }
         return null;
     }
+
+    public boolean update(Account account) {
+        try(Connection conn= ConnectionFactory.getInstance().getConnection()){
+            //prepare SQL statement
+            String sql_statement= "update accounts set balance= ? where account_id= ?";
+            PreparedStatement pre_statement=conn.prepareStatement(sql_statement);
+            pre_statement.setDouble(1,account.getAccountBalance());
+            pre_statement.setString(2,account.getAccountNumber());
+            //Execute statement and save
+            int rowsInserted = pre_statement.executeUpdate();
+            if(rowsInserted!=0){
+                return true;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
     @Override
     public Object save(Object newObj) {return null;}

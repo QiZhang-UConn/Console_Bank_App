@@ -35,9 +35,9 @@ public class DashboardScreen extends Screen{
                     "2) Deposit money into an account\n" +
                     "3) Withdraw money from an account\n" +
                     "4) View Account balance\n" +//might be removed so shows directly in dashboard
-                    "5) View transaction of an account\n" +
-                    "6) Transfer money between accounts\n" +
-                    "7) Log Out");
+                    //"5) View transaction of an account\n" +
+                    "5) Transfer money between accounts\n" +
+                    "6) Log Out");
             String userSelection = consoleReader.readLine();
 
 
@@ -54,13 +54,13 @@ public class DashboardScreen extends Screen{
                 case "4":
                     screenRouter.navigate("detail");
                     break;
+//                case "5":
+//                    screenRouter.navigate("transaction");
+//                    break;
                 case "5":
-                    screenRouter.navigate("transaction");
-                    break;
-                case "6":
                     screenRouter.navigate("transfer");
                     break;
-                case "7":
+                case "6":
                     System.out.println("See You Later~");
                     userService.sessionLogout();
                     break;

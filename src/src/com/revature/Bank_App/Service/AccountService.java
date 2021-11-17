@@ -6,6 +6,7 @@ import com.revature.Bank_App.ObjectModel.AppUser;
 import com.revature.Bank_App.util.LinkedList;
 import sun.awt.image.ImageWatched;
 
+import java.text.DecimalFormat;
 import java.util.UUID;
 
 /*
@@ -14,6 +15,7 @@ import java.util.UUID;
 public class AccountService {
     private AccountDao accountDao;
     private UserService userService;
+    protected final DecimalFormat df=new DecimalFormat("0.00");
 
     public AccountService(UserService userService, AccountDao accountDao){
         this.userService=userService;
@@ -22,7 +24,19 @@ public class AccountService {
 
     public int getAccountNum() {return userService.howManyAccount();}
 
-
+    public  double parseMoney(String amount){
+        double output;
+        try{
+            output=Double.parseDouble(amount);
+            return output;
+        }catch (NumberFormatException| NullPointerException e){
+            System.out.println("Invalid format please re-enter the amount");;
+        }
+        return -0.00;
+    }
+    public boolean isDecline(Account account, double amount){
+        return account.getAccountBalance()>=amount;
+    }
 
     //_________________Opening Account Information Export_______________
     public LinkedList<String> exportMissingAccount(){
@@ -66,5 +80,14 @@ public class AccountService {
             userService.UserAddAccount(newAccount);
         }
 
+    }
+
+    public void deposit(Account account, String amount) {
+        double moneyAmount=parseMoney(amount);
+        if(moneyAmount==-0.00){
+            System.out.println("Invalid amount was given");
+        }
+        account.setAccountBalance(account.getAccountBalance()+moneyAmount);
+        accountDao.update(account);
     }
 }

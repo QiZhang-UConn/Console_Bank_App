@@ -21,7 +21,9 @@ public class AccountCreationScreen extends Screen{
         int numAccount=accountService.getAccountNum();
         System.out.println("Welcome You have "+numAccount+" Accounts");
         if (numAccount==3) {
+            System.out.println("___________________________________________________");
             System.out.println("You have all account types we provided. Thank You!");
+            System.out.println("___________________________________________________");
         }
         else {
             System.out.println("You may create following accounts: \n");

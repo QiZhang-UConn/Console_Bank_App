@@ -2,6 +2,7 @@ package com.revature.Bank_App.Screen;
 
 import com.revature.Bank_App.util.ScreenRouter;
 import java.io.BufferedReader;
+import java.text.DecimalFormat;
 
 public abstract class Screen {
     /*
@@ -14,6 +15,7 @@ public abstract class Screen {
     protected String routingString;
     protected BufferedReader consoleReader;
     protected ScreenRouter screenRouter;
+    protected final DecimalFormat df=new DecimalFormat("0.00");
 
 
     //constructor for a Screen

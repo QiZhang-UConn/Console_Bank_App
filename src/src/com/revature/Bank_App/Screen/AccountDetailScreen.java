@@ -19,13 +19,18 @@ public class AccountDetailScreen extends Screen{
     public void render() throws Exception {
         System.out.println("Account Detail:");
         LinkedList<Account> accounts=accountService.getAccounts();
+        if(accounts.getSize()==0){
+            System.out.println("_________________________________________________________");
+            System.out.println("You have no accounts yet, check out create account option");
+            System.out.println("_________________________________________________________");
+        }
         for(int i=0;i<accounts.getSize();i++){
             Account current=accounts.get(i);
             System.out.println("****************************");
             System.out.println("Account Number: "+current.getAccountNumber());
             System.out.println("Account Type: "+current.getAccountName().toUpperCase(Locale.ROOT));
             System.out.println("Account Owner: "+current.getUsername());
-            System.out.println("Account balance: "+current.getAccountBalance());
+            System.out.println("Account balance: $"+df.format(current.getAccountBalance()));
             System.out.println("****************************");
         }
 
