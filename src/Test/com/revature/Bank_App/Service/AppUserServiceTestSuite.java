@@ -12,7 +12,6 @@ public class AppUserServiceTestSuite {
 
     @Test
     public void Test_isRegistrationValid(RegisterUser user){
-
         //boolean test=isRegistrationValid(null);
     }
 }

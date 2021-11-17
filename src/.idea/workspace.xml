@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35d6509d-7f74-4629-bfb2-8f5f9325cc66" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Test/com/revature/Bank_App/Service/AccountUserTestSuite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/com/revature/Bank_App/Service/AppUserServiceTestSuite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/com/revature/Bank_App/util/ConnectionFactoryTestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../qi_zhang_p0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../qi_zhang_p0.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/postgresql-42.2.12/app.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/WelcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/WelcomeScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/util/AppState.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/util/AppState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/com/revature/Bank_App/Service/AppUserServiceTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/com/revature/Bank_App/Service/AppUserServiceTestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../practice/java/quizzard/pom.xml" />
   </component>
-  <component name="RunManager" selected="Application.Bank_App_Driver">
+  <component name="RunManager" selected="JUnit.ConnectionFactoryTestSuite">
     <configuration name="Bank_App_Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.revature.Bank_App.Bank_App_Driver" />
       <module name="qi_zhang_p0" />
@@ -78,8 +74,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Bank_App_Driver" />
         <item itemvalue="JUnit.ConnectionFactoryTestSuite" />
+        <item itemvalue="Application.Bank_App_Driver" />
       </list>
     </recent_temporary>
   </component>
