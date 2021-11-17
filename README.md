@@ -3,17 +3,17 @@
 Hello project 0
 
 
-#DESCRIPTION 1.00:
-	This is a simple Bank APP, with this app you may
-	     1. register a new user
-	     2. login with existing credentials
-	     3. create new account
-	     4. deposit funds into an account
-	     5. withdraw funds from an account
-	     6. view the balance of and account
-	     7. view the transaction history for an account
+#DESCRIPTION 1.00:\n
+	This is a simple Bank APP, with this app you may\n
+	     1. register a new user\n
+	     2. login with existing credentials\n
+	     3. create new account\n
+	     4. one user may create multiple accounts
+	     5. deposit funds into an account\n
+	     6. withdraw funds from an account\n
+	     7. view the balance of and account\n 
 
-FILES INCLUDED:
-      SRC: source code location
-      DesignDoc: early design documents
-      		  1.flow diagram
+FILES INCLUDED:\n
+      SRC: source code location\n
+      DesignDoc: early design documents\n
+      		  1.flow diagram\n
