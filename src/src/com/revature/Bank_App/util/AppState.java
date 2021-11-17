@@ -50,10 +50,10 @@ public class AppState {
         availableScreens.addScreen(new DashboardScreen(consoleReader,availableScreens,userService));
         availableScreens.addScreen(new AccountCreationScreen(consoleReader,availableScreens,accountService));
         availableScreens.addScreen(new DepositScreen(consoleReader,availableScreens,accountService));
-        availableScreens.addScreen(new WithdrawScreen(consoleReader,availableScreens));
+        availableScreens.addScreen(new WithdrawScreen(consoleReader,availableScreens,accountService));
         availableScreens.addScreen(new AccountDetailScreen(consoleReader,availableScreens,accountService));
         availableScreens.addScreen(new TransactionScreen(consoleReader,availableScreens));
-        availableScreens.addScreen(new MoneyTransferScreen(consoleReader,availableScreens));
+        availableScreens.addScreen(new MoneyTransferScreen(consoleReader,availableScreens,accountService));
 
     }
 

@@ -48,7 +48,10 @@ public class UserService {
     //Helper method checks if provided user info is null or empty string, prevent high cost invalid query
     public boolean isRegistrationValid(RegisterUser tempUser){
             //Check if 2 password match
-            if(!tempUser.getPassword().equals(tempUser.getRepass())) return false;
+            if(!tempUser.getPassword().equals(tempUser.getRepass())){
+                System.out.println("Two password does not match");
+                return false;
+            }
             //check if input is null or empty String
             if(tempUser.getFirstname()==null||tempUser.getFirstname().trim().equals("")) return false;
             if(tempUser.getLastname()==null||tempUser.getLastname().trim().equals("")) return false;

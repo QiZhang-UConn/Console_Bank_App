@@ -35,7 +35,7 @@ public class AccountService {
         return -0.00;
     }
     public boolean isDecline(Account account, double amount){
-        return account.getAccountBalance()>=amount;
+        return amount>account.getAccountBalance();
     }
 
     //_________________Opening Account Information Export_______________
@@ -89,5 +89,33 @@ public class AccountService {
         }
         account.setAccountBalance(account.getAccountBalance()+moneyAmount);
         accountDao.update(account);
+    }
+    public void withdraw(Account account,String amount){
+        double moneyAmount=parseMoney(amount);
+        if(moneyAmount==-0.00){
+            System.out.println("Invalid amount was given");
+        }
+        if(isDecline(account,moneyAmount)){
+            System.out.println("Declined, balance not enough");
+        }
+        else{
+            account.setAccountBalance(account.getAccountBalance()-moneyAmount);
+            accountDao.update(account);
+        }
+    }
+    public void transfer(Account fromAccount, Account toAccount, String amount){
+        double moneyAmount=parseMoney(amount);
+        if(moneyAmount==-0.00){
+            System.out.println("Invalid amount was given");
+        }
+        if(isDecline(fromAccount,moneyAmount)){
+            System.out.println("Declined, balance not enough");
+        }
+        else{
+            fromAccount.setAccountBalance(fromAccount.getAccountBalance()-moneyAmount);
+            accountDao.update(fromAccount);
+            toAccount.setAccountBalance(toAccount.getAccountBalance()+moneyAmount);
+            accountDao.update(toAccount);
+        }
     }
 }
