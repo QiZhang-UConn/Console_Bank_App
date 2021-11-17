@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35d6509d-7f74-4629-bfb2-8f5f9325cc66" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/util/color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DesignDoc/flow_1.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/AccountCreationScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/AccountCreationScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/AccountDetailScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/AccountDetailScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/DashboardScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/DashboardScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/DepositScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/DepositScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/LoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/LoginScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/MoneyTransferScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/MoneyTransferScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/RegisterScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/RegisterScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/WelcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/WelcomeScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/WithdrawScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/WithdrawScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
