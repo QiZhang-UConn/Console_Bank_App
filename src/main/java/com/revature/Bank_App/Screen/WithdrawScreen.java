@@ -7,6 +7,9 @@ import com.revature.Bank_App.util.ScreenRouter;
 
 import java.io.BufferedReader;
 
+import static com.revature.Bank_App.util.color.ANSI_BLUE;
+import static com.revature.Bank_App.util.color.ANSI_RESET;
+
 public class WithdrawScreen extends Screen{
     private AccountService accountService;
     //WithdrawScreen Constructor
@@ -18,7 +21,7 @@ public class WithdrawScreen extends Screen{
 
     @Override
     public void render() throws Exception {
-        System.out.println("Withdraw~");
+        System.out.println(ANSI_BLUE+"Withdraw~"+ANSI_RESET);
         System.out.println("Which account would you like to withdraw from?");
         LinkedList<Account> accounts=accountService.getAccounts();
         for(int i=0;i<accounts.getSize();i++) {

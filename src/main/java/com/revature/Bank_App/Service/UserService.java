@@ -8,6 +8,8 @@ import com.revature.Bank_App.ObjectModel.AppUser;
 import com.revature.Bank_App.ObjectModel.RegisterUser;
 import com.revature.Bank_App.util.LinkedList;
 
+import static com.revature.Bank_App.util.color.*;
+
 /*
     This is a general purpose service class for AppUser, specialized for:
         1.verifying valid input of registration,
@@ -49,7 +51,7 @@ public class UserService {
     public boolean isRegistrationValid(RegisterUser tempUser){
             //Check if 2 password match
             if(!tempUser.getPassword().equals(tempUser.getRepass())){
-                System.out.println("Two password does not match");
+                System.out.println(ANSI_YELLOW+"Two password does not match"+ANSI_RESET);
                 return false;
             }
             //check if input is null or empty String
@@ -67,18 +69,18 @@ public class UserService {
     public boolean RegisterNewUser(RegisterUser user) throws DataPersistenceException {
         //First check if input is valid
         if (!isRegistrationValid(user))
-            throw new InvalidRequestException("Invalid User Information Provided");
+            throw new InvalidRequestException(ANSI_RED+"Invalid User Information Provided"+ANSI_RESET);
         //If Username founded raise Exception to notice user username occupied
         if (!(appUserDao.findByUsername(user.getUsername()) == null))
-            throw new DataPersistenceException("Username occupied, please input another one");
+            throw new DataPersistenceException(ANSI_RED+"Username occupied, please input another one"+ANSI_RESET);
         //If Email founded prompt user to re-enter info
         if (!(appUserDao.findByEmail(user.getEmail()) == null))
-            throw new DataPersistenceException("Email occupied, please input another one");
+            throw new DataPersistenceException(ANSI_RED+"Email occupied, please input another one"+ANSI_RESET);
         //Otherwise, save the user info to database
         sessionUser = appUserDao.save(user);
         //Raise exception if data doesn't save correctly
         if (sessionUser == null) {
-            throw new DataPersistenceException("The user could not be persisted to the datasource!");
+            throw new DataPersistenceException(ANSI_RED+"The user could not be persisted to the datasource!"+ANSI_RESET);
         }
         return true;
     }

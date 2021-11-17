@@ -7,6 +7,9 @@ import com.revature.Bank_App.util.ScreenRouter;
 
 import java.io.BufferedReader;
 
+import static com.revature.Bank_App.util.color.ANSI_BLUE;
+import static com.revature.Bank_App.util.color.ANSI_RESET;
+
 public class DepositScreen extends Screen{
     private AccountService accountService;
     //DepositScreen Constructor
@@ -17,7 +20,7 @@ public class DepositScreen extends Screen{
 
     @Override
     public void render() throws Exception {
-        System.out.println("Deposit!");
+        System.out.println(ANSI_BLUE+"Deposit!"+ANSI_RESET);
         System.out.println("Which account would you like to deposit into?");
         LinkedList<Account> accounts=accountService.getAccounts();
         for(int i=0;i<accounts.getSize();i++) {

@@ -7,6 +7,9 @@ import com.revature.Bank_App.util.ScreenRouter;
 
 import java.io.BufferedReader;
 
+import static com.revature.Bank_App.util.color.ANSI_BLUE;
+import static com.revature.Bank_App.util.color.ANSI_RESET;
+
 public class MoneyTransferScreen extends Screen{
     private AccountService accountService;
     public MoneyTransferScreen(BufferedReader consoleReader, ScreenRouter screenRouter,AccountService accountService) {
@@ -16,7 +19,7 @@ public class MoneyTransferScreen extends Screen{
 
     @Override
     public void render() throws Exception {
-        System.out.println("Transfer: Money Moves~~~");
+        System.out.println(ANSI_BLUE+"Transfer: Money Moves~~~"+ANSI_RESET);
 
         System.out.println("Which account would you like to withdraw from?");
         LinkedList<Account> accounts=accountService.getAccounts();

@@ -4,6 +4,8 @@ import com.revature.Bank_App.Service.UserService;
 import com.revature.Bank_App.util.ScreenRouter;
 import java.io.BufferedReader;
 import static com.revature.Bank_App.util.AppState.AppStopping;
+import static com.revature.Bank_App.util.color.ANSI_BLUE;
+import static com.revature.Bank_App.util.color.ANSI_RESET;
 
 public class WelcomeScreen extends Screen{
     private UserService userService;
@@ -18,7 +20,7 @@ public class WelcomeScreen extends Screen{
      */
     @Override
     public void render() throws Exception {
-        System.out.println("Welcome to the Bank App! Please make selections\n"+
+        System.out.println(ANSI_BLUE+"Welcome to the Bank App! Please make selections\n"+ANSI_RESET+
                 "1) Login\n"+
                 "2) Register\n"+
                 "3) Exits\n");

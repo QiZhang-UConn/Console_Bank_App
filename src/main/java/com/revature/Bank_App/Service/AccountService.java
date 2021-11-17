@@ -7,6 +7,9 @@ import com.revature.Bank_App.util.LinkedList;
 import java.text.DecimalFormat;
 import java.util.UUID;
 
+import static com.revature.Bank_App.util.color.ANSI_RESET;
+import static com.revature.Bank_App.util.color.ANSI_YELLOW;
+
 /*
     This is a general purpose helper class for managing
 */
@@ -28,7 +31,7 @@ public class AccountService {
             output=Double.parseDouble(amount);
             return output;
         }catch (NumberFormatException| NullPointerException e){
-            System.out.println("Invalid format please re-enter the amount");;
+            System.out.println(ANSI_YELLOW+"Invalid format please re-enter the amount"+ANSI_RESET);;
         }
         return -0.00;
     }
@@ -83,7 +86,7 @@ public class AccountService {
     public void deposit(Account account, String amount) {
         double moneyAmount=parseMoney(amount);
         if(moneyAmount==-0.00){
-            System.out.println("Invalid amount was given");
+            System.out.println(ANSI_YELLOW+"Invalid amount was given"+ANSI_RESET);
         }
         account.setAccountBalance(account.getAccountBalance()+moneyAmount);
         accountDao.update(account);
@@ -91,10 +94,10 @@ public class AccountService {
     public void withdraw(Account account,String amount){
         double moneyAmount=parseMoney(amount);
         if(moneyAmount==-0.00){
-            System.out.println("Invalid amount was given");
+            System.out.println(ANSI_YELLOW+"Invalid amount was given"+ANSI_RESET);
         }
         if(isDecline(account,moneyAmount)){
-            System.out.println("Declined, balance not enough");
+            System.out.println(ANSI_YELLOW+"Declined, balance not enough"+ANSI_RESET);
         }
         else{
             account.setAccountBalance(account.getAccountBalance()-moneyAmount);
@@ -104,10 +107,10 @@ public class AccountService {
     public void transfer(Account fromAccount, Account toAccount, String amount){
         double moneyAmount=parseMoney(amount);
         if(moneyAmount==-0.00){
-            System.out.println("Invalid amount was given");
+            System.out.println(ANSI_YELLOW+"Invalid amount was given"+ANSI_RESET);
         }
         if(isDecline(fromAccount,moneyAmount)){
-            System.out.println("Declined, balance not enough");
+            System.out.println(ANSI_YELLOW+"Declined, balance not enough"+ANSI_RESET);
         }
         else{
             fromAccount.setAccountBalance(fromAccount.getAccountBalance()-moneyAmount);

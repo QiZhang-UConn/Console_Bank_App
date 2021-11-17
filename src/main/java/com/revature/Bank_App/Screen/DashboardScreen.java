@@ -6,6 +6,8 @@ import com.revature.Bank_App.util.ScreenRouter;
 
 import java.io.BufferedReader;
 
+import static com.revature.Bank_App.util.color.*;
+
 /*
     Screen served as a welcome navigation panel for user private actions
 */
@@ -24,9 +26,9 @@ public class DashboardScreen extends Screen{
 
     @Override
     public void render() throws Exception {
-        System.out.println("Welcome to Dashboard!");
+        System.out.println(ANSI_BLUE+"Welcome to Dashboard!"+ANSI_RESET);
         while (userService.isSessionExit()) {
-            System.out.println("What do you want to do today?");
+            System.out.println(ANSI_CYAN+"What do you want to do today?"+ANSI_RESET);
             System.out.println("1) Create an account\n" +
                     "2) Deposit money into an account\n" +
                     "3) Withdraw money from an account\n" +

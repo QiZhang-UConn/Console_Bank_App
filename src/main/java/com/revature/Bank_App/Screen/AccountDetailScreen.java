@@ -8,6 +8,9 @@ import com.revature.Bank_App.util.ScreenRouter;
 import java.io.BufferedReader;
 import java.util.Locale;
 
+import static com.revature.Bank_App.util.color.ANSI_BLUE;
+import static com.revature.Bank_App.util.color.ANSI_RESET;
+
 public class AccountDetailScreen extends Screen{
     private AccountService accountService;
     public AccountDetailScreen(BufferedReader consoleReader, ScreenRouter screenRouter, AccountService accountService) {
@@ -17,7 +20,7 @@ public class AccountDetailScreen extends Screen{
 
     @Override
     public void render() throws Exception {
-        System.out.println("Account Detail:");
+        System.out.println(ANSI_BLUE+"Account Detail:"+ANSI_RESET);
         LinkedList<Account> accounts=accountService.getAccounts();
         if(accounts.getSize()==0){
             System.out.println("_________________________________________________________");

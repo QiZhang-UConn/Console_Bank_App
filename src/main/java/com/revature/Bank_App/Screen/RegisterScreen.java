@@ -8,6 +8,9 @@ import com.revature.Bank_App.util.ScreenRouter;
 
 import java.io.BufferedReader;
 
+import static com.revature.Bank_App.util.color.ANSI_BLUE;
+import static com.revature.Bank_App.util.color.ANSI_RESET;
+
 public class RegisterScreen extends Screen {
     private UserService userService;
 
@@ -20,7 +23,7 @@ public class RegisterScreen extends Screen {
 
     @Override
     public void render() throws Exception {
-        System.out.println("Welcome to New User Registration");
+        System.out.println(ANSI_BLUE+"Welcome to New User Registration"+ANSI_RESET);
         System.out.println("Type in you information to register");
 
         //Taking User Info

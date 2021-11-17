@@ -6,6 +6,9 @@ import com.revature.Bank_App.util.ScreenRouter;
 
 import java.io.BufferedReader;
 
+import static com.revature.Bank_App.util.color.ANSI_BLUE;
+import static com.revature.Bank_App.util.color.ANSI_RESET;
+
 public class AccountCreationScreen extends Screen{
     private AccountService accountService;
 
@@ -17,7 +20,7 @@ public class AccountCreationScreen extends Screen{
     @Override
     public void render() throws Exception {
         int numAccount=accountService.getAccountNum();
-        System.out.println("Welcome You have "+numAccount+" Accounts");
+        System.out.println(ANSI_BLUE+"Welcome You have "+numAccount+" Accounts"+ANSI_RESET);
         if (numAccount==3) {
             System.out.println("___________________________________________________");
             System.out.println("You have all account types we provided. Thank You!");
