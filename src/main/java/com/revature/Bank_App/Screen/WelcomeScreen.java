@@ -1,6 +1,7 @@
 package com.revature.Bank_App.Screen;
 
 import com.revature.Bank_App.Service.UserService;
+import com.revature.Bank_App.util.Logger;
 import com.revature.Bank_App.util.ScreenRouter;
 import java.io.BufferedReader;
 import static com.revature.Bank_App.util.AppState.AppStopping;
@@ -9,8 +10,9 @@ import static com.revature.Bank_App.util.color.ANSI_RESET;
 
 public class WelcomeScreen extends Screen{
     private UserService userService;
+    protected Logger logger;
     //WelcomeScreen Constructor
-    public WelcomeScreen(BufferedReader consoleReader, ScreenRouter screenRouter, UserService userService) {
+    public WelcomeScreen(BufferedReader consoleReader, ScreenRouter screenRouter, UserService userService, Logger logger) {
         super("Welcome Screen","welcome", consoleReader, screenRouter);
         this.userService=userService;
     }
@@ -20,6 +22,7 @@ public class WelcomeScreen extends Screen{
      */
     @Override
     public void render() throws Exception {
+        //logger.log("Starting Application");
         System.out.println(ANSI_BLUE+"Welcome to the Bank App! Please make selections\n"+ANSI_RESET+
                 "1) Login\n"+
                 "2) Register\n"+

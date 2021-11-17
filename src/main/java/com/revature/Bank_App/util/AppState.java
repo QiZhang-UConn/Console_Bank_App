@@ -22,6 +22,7 @@ public class AppState {
     private static boolean isRunning;//we want to go back to welcome unless user exit
     //private static boolean isAuthenticated;//For the purpose to access Dashboard and other private screens
     private final ScreenRouter availableScreens;
+    protected Logger logger;
 
     //       _________App condition variable control______________
     //App Started and is running
@@ -44,7 +45,7 @@ public class AppState {
         AccountService accountService=new AccountService(userService,accountDao);
         //initiating AppState must be before login, only Welcome, login, register can be accessed, maybe dashboard
         availableScreens=new ScreenRouter();
-        availableScreens.addScreen(new WelcomeScreen(consoleReader,availableScreens,userService));
+        availableScreens.addScreen(new WelcomeScreen(consoleReader,availableScreens,userService,logger));
         availableScreens.addScreen(new LoginScreen(consoleReader,availableScreens,userService));
         availableScreens.addScreen(new RegisterScreen(consoleReader,availableScreens,userService));
         availableScreens.addScreen(new DashboardScreen(consoleReader,availableScreens,userService));
