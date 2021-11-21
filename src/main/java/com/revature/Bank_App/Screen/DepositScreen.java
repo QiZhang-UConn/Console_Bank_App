@@ -27,10 +27,17 @@ public class DepositScreen extends Screen{
             System.out.println(i+")"+accounts.get(i).getAccountName());
         }
         String userSelection=consoleReader.readLine();
-        //TODO:validation check for input
-        System.out.println("Please input the amount you would like to deposit");
-        System.out.print(">");
-        String amount=consoleReader.readLine();
-        accountService.deposit(accounts.get(Integer.valueOf(userSelection)),amount);
+        try {
+            if (!(Integer.parseInt(userSelection) >= 0 && Integer.parseInt(userSelection) <accounts.getSize())) {
+                System.out.println("Invalid Input");
+            } else {
+                System.out.println("Please input the amount you would like to deposit");
+                System.out.print(">");
+                String amount = consoleReader.readLine();
+                accountService.deposit(accounts.get(Integer.valueOf(userSelection)), amount);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

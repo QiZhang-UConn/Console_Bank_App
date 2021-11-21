@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.revature</groupId>
-    <artifactId>qi_zhang_p0</artifactId>
+    <artifactId>Bank_App</artifactId>
     <version>1.0.0</version>
 
     <properties>

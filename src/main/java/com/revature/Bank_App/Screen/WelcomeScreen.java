@@ -15,6 +15,7 @@ public class WelcomeScreen extends Screen{
     public WelcomeScreen(BufferedReader consoleReader, ScreenRouter screenRouter, UserService userService, Logger logger) {
         super("Welcome Screen","welcome", consoleReader, screenRouter);
         this.userService=userService;
+        this.logger=logger;
     }
 
     /*
@@ -22,7 +23,7 @@ public class WelcomeScreen extends Screen{
      */
     @Override
     public void render() throws Exception {
-        //logger.log("Starting Application");
+        logger.log("Welcome", System.currentTimeMillis());
         System.out.println(ANSI_BLUE+"Welcome to the Bank App! Please make selections\n"+ANSI_RESET+
                 "1) Login\n"+
                 "2) Register\n"+

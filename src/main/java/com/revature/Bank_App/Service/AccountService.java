@@ -22,6 +22,7 @@ public class AccountService {
         this.userService=userService;
         this.accountDao=accountDao;
     }
+    public AccountService(){}
 
     public int getAccountNum() {return userService.howManyAccount();}
 

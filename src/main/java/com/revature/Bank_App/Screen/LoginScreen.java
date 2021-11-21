@@ -1,12 +1,12 @@
 package com.revature.Bank_App.Screen;
 
+import com.revature.Bank_App.Exceptions.DataPersistenceException;
 import com.revature.Bank_App.ObjectModel.AppUser;
 import com.revature.Bank_App.Service.UserService;
 import com.revature.Bank_App.util.ScreenRouter;
 import java.io.BufferedReader;
 
-import static com.revature.Bank_App.util.color.ANSI_BLUE;
-import static com.revature.Bank_App.util.color.ANSI_RESET;
+import static com.revature.Bank_App.util.color.*;
 
 public class LoginScreen extends Screen{
     UserService userService;
@@ -29,10 +29,10 @@ public class LoginScreen extends Screen{
         try{
             sessionUser=userService.UserLogin(username,password);
             if(!(sessionUser==null)) System.out.println("Welcome Back Bank App User");
-            //screenRouter.addScreen(new DashboardScreen(consoleReader,screenRouter,userService));
-            //System.out.println(sessionUser.getAccounts().toString());
             screenRouter.navigate("dashboard");
-        }catch(Exception e){
+        }catch(DataPersistenceException e){
+            System.out.println(ANSI_RED+"No user found or password does not match"+ANSI_RESET);
+        }catch (Exception e){
             e.printStackTrace();
         }
 

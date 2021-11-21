@@ -5,9 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35d6509d-7f74-4629-bfb2-8f5f9325cc66" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main/resources/postgresql-42.2.12/app.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/log/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/com/revature/Bank_App/Service/AccountUserTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/com/revature/Bank_App/Service/AccountUserTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/com/revature/Bank_App/Service/AppUserServiceTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/com/revature/Bank_App/Service/AppUserServiceTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Bank_App_Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Bank_App_Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/DepositScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/DepositScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/LoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/LoginScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/MoneyTransferScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/MoneyTransferScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/WelcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/WelcomeScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/WithdrawScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Screen/WithdrawScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/Service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/util/AppState.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/util/AppState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/revature/Bank_App/util/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/revature/Bank_App/util/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/db.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +57,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../practice/java/quizzard/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.ConnectionFactoryTestSuite">
+  <component name="RunManager" selected="JUnit.AppUserServiceTestSuite.Test_isRegistrationValid">
     <configuration name="Bank_App_Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.revature.Bank_App.Bank_App_Driver" />
       <module name="qi_zhang_p0" />
@@ -53,6 +72,52 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountUserTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qi_zhang_p0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.Bank_App.Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.Bank_App.Service" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.Bank_App.Service.AccountUserTestSuite" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppUserServiceTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qi_zhang_p0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.Bank_App.Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.Bank_App.Service" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.Bank_App.Service.AppUserServiceTestSuite" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppUserServiceTestSuite.Test_isRegistrationValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qi_zhang_p0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.Bank_App.Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.Bank_App.Service" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.Bank_App.Service.AppUserServiceTestSuite" />
+      <option name="METHOD_NAME" value="Test_isRegistrationValid" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -74,8 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ConnectionFactoryTestSuite" />
+        <item itemvalue="JUnit.AppUserServiceTestSuite.Test_isRegistrationValid" />
         <item itemvalue="Application.Bank_App_Driver" />
+        <item itemvalue="JUnit.AppUserServiceTestSuite" />
+        <item itemvalue="JUnit.AccountUserTestSuite" />
+        <item itemvalue="JUnit.ConnectionFactoryTestSuite" />
       </list>
     </recent_temporary>
   </component>
@@ -101,5 +169,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Bank_App$AccountUserTestSuite.ic" NAME="AccountUserTestSuite Coverage Results" MODIFIED="1637535647895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.revature.Bank_App.Service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Bank_App$AppUserServiceTestSuite_Test_isRegistrationValid.ic" NAME="AppUserServiceTestSuite.Test_isRegistrationValid Coverage Results" MODIFIED="1637514058784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.revature.Bank_App.Service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Bank_App$AppUserServiceTestSuite.ic" NAME="AppUserServiceTestSuite Coverage Results" MODIFIED="1637535653174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.revature.Bank_App.Service.*</FILTER>
+    </SUITE>
   </component>
 </project>

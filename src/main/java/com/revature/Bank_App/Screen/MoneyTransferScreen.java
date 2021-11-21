@@ -27,14 +27,25 @@ public class MoneyTransferScreen extends Screen{
             System.out.println(i+")"+accounts.get(i).getAccountName());
         }
         String fromAccount=consoleReader.readLine();
-        //TODO:validation check for input
-        System.out.println("Please input the amount you would like to withdraw");
-        System.out.print(">");
-        String amount=consoleReader.readLine();
-        System.out.println("Which account would you like to transfer money to");
-        String toAccount=consoleReader.readLine();
-
-        accountService.transfer(accounts.get(Integer.valueOf(fromAccount)),
-                accounts.get(Integer.valueOf(toAccount)),amount);
+        try {
+            if (!(Integer.parseInt(fromAccount) >= 0 && Integer.parseInt(fromAccount) <accounts.getSize())) {
+                System.out.println("Invalid Input");
+            }else {
+                System.out.println("Please input the amount you would like to withdraw");
+                System.out.print(">");
+                String amount = consoleReader.readLine();
+                System.out.println("Which account would you like to transfer money to");
+                String toAccount = consoleReader.readLine();
+                if (!(Integer.parseInt(toAccount) >= 0 && Integer.parseInt(toAccount) <accounts.getSize())) {
+                    System.out.println("Invalid Input");
+                }
+                else {
+                    accountService.transfer(accounts.get(Integer.valueOf(fromAccount)),
+                            accounts.get(Integer.valueOf(toAccount)), amount);
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

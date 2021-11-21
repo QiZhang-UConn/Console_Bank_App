@@ -40,6 +40,8 @@ public class AppState {
         //Once AppState is instantiated, means someone is using the app
         AppRunning();
         AppUserDao userDAO = new AppUserDao();
+        logger = Logger.getLogger(true);
+        logger.log("Initializing application...");
         UserService userService = new UserService(userDAO);
         AccountDao accountDao=new AccountDao();
         AccountService accountService=new AccountService(userService,accountDao);

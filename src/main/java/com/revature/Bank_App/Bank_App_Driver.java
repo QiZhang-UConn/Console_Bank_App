@@ -1,9 +1,9 @@
 package com.revature.Bank_App;
 
+import com.revature.Bank_App.Service.UserService;
 import com.revature.Bank_App.util.AppState;
 
 public class Bank_App_Driver {
-
 
 
     //Welcome to the bank app
@@ -11,7 +11,4 @@ public class Bank_App_Driver {
         AppState app= new AppState();
         app.initialState();
     }
-
-
-
 }
