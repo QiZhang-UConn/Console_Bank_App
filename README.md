@@ -1,9 +1,8 @@
-#project 0
-
-Hello project 0
+# Simple Java Console Bank App
 
 
-#DESCRIPTION 1.00:\n
+
+DESCRIPTION 1.00:\n
 	This is a simple Bank APP, with this app you may
 	     1. register a new user
 	     2. login with existing credentials
